@@ -22,3 +22,8 @@ input:focus {
     outline: none !important;
     border: 1px solid rgb(112, 112, 112);
 }
+
+.text-danger {
+    color: #dc3545;
+    font-size: 14px;
+}
