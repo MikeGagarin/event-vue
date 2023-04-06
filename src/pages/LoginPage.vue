@@ -34,6 +34,7 @@ export default {
             }
 
             LoginService.authUser(user);
+            this.$router.push({name: 'home'});
         },
         updateError() {
             this.showError = false;

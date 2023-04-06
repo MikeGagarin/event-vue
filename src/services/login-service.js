@@ -25,4 +25,8 @@ export default class LoginService {
     static logout() {
         Storage.set(CURRENT_USER_KEY, '');
     }
+
+    static checkAuth() {
+        return !!Storage.get(CURRENT_USER_KEY);
+    }
 }
