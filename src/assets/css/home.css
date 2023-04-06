@@ -1,0 +1,16 @@
+.wrapper {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.home-header {
+    padding-top: 40px;
+    padding-bottom: 10px;
+}
+
+.event-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}

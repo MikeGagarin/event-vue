@@ -17,4 +17,32 @@ export default class Helpers {
         }
         return hash;
     }
+
+    static getAvatarRandomColor() {
+        let colors = [
+            '#37306B',
+            '#66347F',
+            '#9E4784',
+            '#D27685',
+            '#2C3333',
+            '#395B64',
+            '#A5C9CA'
+        ];
+
+        return colors[this.getRandomInt(colors.length - 1)];
+    }
+
+    static getRandomEmojis() {
+        let emojis = ['🎊','💃','🤹','👸','🎆','🎉','👑','👸','👋','🎊','🎇','🚘','✨','💃','👙','🎉','🔔','🎉','🎅','🎁','🎄'];
+
+        return emojis[this.getRandomInt(emojis.length - 1)];
+    }
+
+    /**
+     * @param {number} max
+     * @returns {number}
+     */
+    static getRandomInt(max) {
+        return Math.floor(Math.random() * max);
+    }
 }
