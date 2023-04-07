@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <h3 class="event-title">{{ emoji }} {{ event.title }}</h3>
+        <h3 class="event-title">{{ event.emoji }} {{ event.title }}</h3>
         <p>Мероприятие намечено на {{ event.startDate }}</p>
         <div class="event-footer">
             <div class="author-info">
@@ -25,9 +25,6 @@ export default {
         avatarColor() {
             let hexColor = Helpers.getAvatarRandomColor();
             return 'background-color:' + hexColor
-        },
-        emoji() {
-            return Helpers.getRandomEmojis();
         }
     }
 }
