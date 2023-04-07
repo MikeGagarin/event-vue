@@ -17,10 +17,17 @@ export default class EventService {
             events.push(event);
         }
 
-        Storage.set(EVENTS_STORAGE_KEY, events);
+        return events;
     }
 
     static getEvents() {
-        return Storage.get(EVENTS_STORAGE_KEY, null);
+        let events = Storage.get(EVENTS_STORAGE_KEY, null);
+
+        if (!events) {
+            events = this.seedEvents();
+            Storage.set(EVENTS_STORAGE_KEY, events);
+        }
+
+        return events;
     }
 }
