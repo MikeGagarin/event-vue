@@ -15,24 +15,31 @@ export default class UserService {
     }
 
     /**
-     * @returns {User}
-     */
-    static getAgentUser() {
-        return new User({
-            name: "Сергей Семенов",
-            email: "sergeysemenov@gmail.ru",
-            password: "123456789",
-            role: Roles.agent
-        });
-    }
-
-    /**
      * @returns {User[]}
      */
-    static getUsers() {
+    static getAgentUsers() {
         return [
-            this.getAdminUser(),
-            this.getAgentUser()
+            new User({
+                id: 1,
+                name: "Сергей Семенов",
+                email: "sergeysemenov@gmail.ru",
+                password: "123456789",
+                role: Roles.agent
+            }),
+            new User({
+                id: 2,
+                name: "Семен Семенов",
+                email: "sergeysemenov@gmail.ru",
+                password: "123456789",
+                role: Roles.agent
+            }),
+            new User({
+                id: 3,
+                name: "Семен Сергеев",
+                email: "sergeysemenov@gmail.ru",
+                password: "123456789",
+                role: Roles.agent
+            })
         ];
     }
 }

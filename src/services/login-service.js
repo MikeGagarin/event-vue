@@ -5,14 +5,13 @@ import Storage from "@/services/storage";
 const CURRENT_USER_KEY = 'currentUser';
 export default class LoginService {
     static checkCredentials(email, password) {
-        let users = UserService.getUsers();
-        let foundUsers = users.filter((user) => user.email === email && user.password === Helpers.makeHash(password));
+        let user = UserService.getAdminUser();
 
-        if (foundUsers.length === 0) {
-            return null;
+        if (user.email === email && user.password === Helpers.makeHash(password)) {
+            return user;
         }
 
-        return foundUsers[0];
+        return null;
     }
 
     /**

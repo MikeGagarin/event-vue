@@ -3,13 +3,14 @@ import * as UUID from "uuid"
 
 export default class User {
     /**
+     * @param {string|null} id
      * @param {string} name
      * @param {string} email
      * @param {string} password
      * @param {string} role
      */
-    constructor({name, email, password, role}) {
-        this.id = UUID.v4();
+    constructor({id = null, name, email, password, role}) {
+        this.id = id != null ? id : UUID.v4();
         this.name = name;
         this.email = email;
         this.password = Helpers.makeHash(password);

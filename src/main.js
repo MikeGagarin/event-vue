@@ -3,6 +3,7 @@ import * as VueRouter from 'vue-router'
 import App from "@/App.vue";
 import {routes} from '@/routes'
 import LoginService from "@/services/login-service";
+import {initEvents} from "@/boot";
 
 const router = VueRouter.createRouter({
     history: VueRouter.createWebHistory(),
@@ -20,6 +21,8 @@ router.beforeEach((to, from, next) => {
     }
 })
 
-const app = createApp(App)
-app.use(router)
-app.mount('#app')
+const app = createApp(App);
+app.use(router);
+app.mount('#app');
+
+initEvents();

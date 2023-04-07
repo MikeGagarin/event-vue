@@ -1,11 +1,11 @@
 <template>
     <div class="container">
-        <h3 class="event-title">{{ emoji }} Название мероприятия</h3>
-        <p>Мероприятие намечено на 12.12.2032</p>
+        <h3 class="event-title">{{ emoji }} {{ event.title }}</h3>
+        <p>Мероприятие намечено на {{ event.startDate }}</p>
         <div class="event-footer">
             <div class="author-info">
-                <div class="avatar" :style="avatarColor">В</div>
-                <span>Валентин Юдашкин</span>
+                <div class="avatar" :style="avatarColor">{{ event.author.name[0] }}</div>
+                <span>{{ event.author.name }}</span>
             </div>
             <button class="btn-submit">Посмотреть</button>
         </div>
