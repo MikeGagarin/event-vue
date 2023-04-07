@@ -22,7 +22,6 @@
 }
 
 .btn-submit {
-    float: right;
     padding: 10px;
     border: none;
     background-color: #46a83e;
@@ -31,6 +30,10 @@
     cursor: pointer;
     transition: background-color 200ms ease;
     font-family: 'Montserrat', sans-serif;
+}
+
+.btn-submit.login {
+    float: right;
 }
 
 .btn-submit:hover {

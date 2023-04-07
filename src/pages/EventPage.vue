@@ -4,6 +4,7 @@
         <AuthorInfo :author="event.author"></AuthorInfo>
         <h3 class="assigned-header">Подтвержденные агенты:</h3>
         <div class="assigned-agent">
+            <button class="btn-submit">Подтвердить агента</button>
             <AuthorInfo v-for="agent in event.agents" :author="agent" v-bind:key="agent"></AuthorInfo>
         </div>
     </div>

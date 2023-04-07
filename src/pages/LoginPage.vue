@@ -6,7 +6,7 @@
             <form action="">
                 <input type="email" placeholder="Email" v-model="email" @input="unsetError">
                 <input type="password" placeholder="Пароль" v-model="password" @input="unsetError">
-                <button type="submit" class="btn-submit" @click.prevent="auth">Войти</button>
+                <button type="submit" class="btn-submit login" @click.prevent="auth">Войти</button>
             </form>
         </div>
     </div>
