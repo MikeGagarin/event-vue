@@ -5,21 +5,13 @@ export default class Event {
      * @param {string} emoji
      * @param {string} startDate
      * @param {User} author
-     * @param {User[]} agents
      */
-    constructor({title, emoji, startDate, author, agents}) {
+    constructor({title, emoji, startDate, author}) {
         this.id = UUID.v4();
         this.title = title;
         this.startDate = startDate;
         this.author = author;
-        this.agents = agents;
+        this.agents = [];
         this.emoji = emoji;
-    }
-
-    /**
-     * @param {User} agent
-     */
-    assignAgent(agent) {
-        this.agents.push(agent);
     }
 }

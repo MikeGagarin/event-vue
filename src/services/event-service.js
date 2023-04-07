@@ -57,4 +57,29 @@ export default class EventService {
 
         return foundEvents[0];
     }
+
+    /**
+     * @param {string} eventId
+     * @param {string} agentId
+     */
+    static assignAgentToEvent(eventId, agentId) {
+        let agent = UserService.getAgentById(agentId);
+
+        let modEvents = this.getEvents().map((event) => {
+            if (event.id === eventId) {
+                event.agents.push(agent);
+            }
+            return event;
+        });
+
+        this.saveEvents(modEvents);
+    }
+
+    /**
+     * @param {Events[]} events
+     */
+    static saveEvents(events) {
+        Storage.set(EVENTS_STORAGE_KEY, events);
+        this.events = events;
+    }
 }
