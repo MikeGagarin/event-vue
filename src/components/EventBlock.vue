@@ -3,28 +3,25 @@
         <h3 class="event-title">{{ event.emoji }} {{ event.title }}</h3>
         <p>Мероприятие намечено на {{ event.startDate }}</p>
         <div class="event-footer">
-            <div class="author-info">
-                <div class="avatar" :style="avatarColor">{{ event.author.name[0] }}</div>
-                <span>{{ event.author.name }}</span>
-            </div>
-            <button class="btn-submit">Посмотреть</button>
+            <AuthorInfo :author="event.author"></AuthorInfo>
+            <button class="btn-submit" @click="showEvent(event.id)">Посмотреть</button>
         </div>
     </div>
 </template>
 
 <script>
-import Helpers from "@/services/helpers";
 import Event from "@/models/event";
+import AuthorInfo from "@/components/AuthorInfo.vue";
 
 export default {
     name: "EventBlock",
+    components: {AuthorInfo},
     props: {
         event: Event
     },
-    computed: {
-        avatarColor() {
-            let hexColor = Helpers.getAvatarRandomColor();
-            return 'background-color:' + hexColor
+    methods: {
+        showEvent(id) {
+            this.$router.push({name: 'event', params: {id}})
         }
     }
 }

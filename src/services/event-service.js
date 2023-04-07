@@ -29,13 +29,32 @@ export default class EventService {
      * @returns {Event[]}
      */
     static getEvents() {
+        if (this.events) {
+            return this.events;
+        }
+
         let events = Storage.get(EVENTS_STORAGE_KEY, null);
 
         if (!events) {
             events = this.seedEvents();
             Storage.set(EVENTS_STORAGE_KEY, events);
+            this.events = events;
         }
 
         return events;
+    }
+
+    /**
+     * @param id
+     * @returns {Event|null}
+     */
+    static getEventById(id) {
+        let foundEvents = this.getEvents().filter((event) => event.id === id);
+
+        if (foundEvents.length === 0) {
+            return null;
+        }
+
+        return foundEvents[0];
     }
 }

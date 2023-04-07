@@ -2,7 +2,7 @@
     <div class="wrapper">
         <h1 class="home-header">Мероприятия</h1>
         <div class="event-list">
-          <EventBlock v-for="event in events" v-bind:key="event.id" :event="event"></EventBlock>
+            <EventBlock v-for="event in events" v-bind:key="event.id" :event="event"></EventBlock>
         </div>
     </div>
 </template>

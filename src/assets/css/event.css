@@ -26,3 +26,13 @@
     align-items: center;
     justify-content: space-between;
 }
+
+.assigned-header {
+    margin-top: 40px;
+}
+
+.assigned-agent {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 20px;
+}
