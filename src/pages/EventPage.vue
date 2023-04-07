@@ -25,7 +25,7 @@ export default {
     },
     methods: {
         pushToScan() {
-            this.$router.replace({name: 'scanqr', props: {eventId: this.id}})
+            this.$router.push({name: 'scanqr', props: {eventId: this.id}})
         }
     }
 }
