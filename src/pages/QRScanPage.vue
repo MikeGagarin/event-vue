@@ -14,6 +14,7 @@ export default {
         const qrScanner = new QrScanner(
             videoElem,
             result => {
+                qrScanner.stop();
                 EventService.assignAgentToEvent(this.$props.id, result);
                 this.$router.replace({name: 'event', params: {'id': this.$props.id}});
             }
